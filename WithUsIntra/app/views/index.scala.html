@@ -1,0 +1,24 @@
+@(message: String)
+
+ 
+@main("Welcome to Play") {
+
+<script type="text/javascript" src="@routes.Assets.versioned("js/index.js")"></script>
+
+<p>Users list:</p>
+<ul id="users"></ul>
+<p>End of Users list.</p>
+
+
+<br />
+
+<p>Add new User </p>
+
+  <form action="@routes.HomeController.addUser()" method="post">  
+  <input type="text" name="name"/>  
+  <button> Add User </button>
+  
+  </form>
+  
+
+}
