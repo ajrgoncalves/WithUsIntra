@@ -19,7 +19,7 @@
     </head>
     
     <body>        
-      <div class="container">
+      <div class="container" >
         
         <div style="margin-bottom: 50px;">
         <div class="navbar-header">
@@ -29,7 +29,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="@routes.HomeController.index()"><h2>WithUs</h2></a>
+          <a class="navbar-brand" href="@routes.HomeController.index()">WithUs</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <form class="navbar-form navbar-right">
@@ -40,22 +40,24 @@
               <input type="password" placeholder="Password" class="form-control">
             </div>
             <button type="submit" class="btn btn-success">Sign in</button>
-            <button type="submit" class="btn btn-primary">Resgister</button>
+            <a href="@routes.HomeController.register()" type="submit" class="btn btn-primary">Register</a>
+            
           </form>
         </div><!--/.navbar-collapse -->
       </div>
-      </div>
+      
     
     
     @content
     
+     </div>
     <footer>
-    <div>
+    <div >
         <p>&copy; 2016 WithUs </p>
         </div>
       </footer>
-        </div>
         
+       
         
         
         <script type='text/javascript'  src='@routes.Assets.versioned("/stylesheets/bootstrap/js/bootstrap.min.js")'></script>      

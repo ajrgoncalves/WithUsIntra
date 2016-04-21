@@ -16,3 +16,6 @@ GET     /assets/*file               controllers.Assets.versioned(path="/public",
 GET 	/users						controllers.HomeController.getUsers 
 
 POST 	/addUser					controllers.HomeController.addUser
+
+
+GET 	/register					controllers.HomeController.register

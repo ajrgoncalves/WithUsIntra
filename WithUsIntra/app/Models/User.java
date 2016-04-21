@@ -17,6 +17,8 @@ public class User extends Model{
     public String name; 
     public String lastName;
     public int age;
+    public String email;
+    public String password;
 
     
     public User(){}
@@ -29,6 +31,14 @@ public class User extends Model{
     public User(String name, String lastName){
     	this.name = name;
     	this.lastName = lastName;
+    }
+    
+    public User(String name, String lastName, String email, String password, int age){
+    	this.name = name;
+    	this.lastName = lastName;
+    	this.age = age;
+    	this.email = email;
+    	this.password = password;
     }
     
     	
