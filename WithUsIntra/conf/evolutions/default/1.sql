@@ -6,6 +6,8 @@
 create table user (
   id                            integer not null,
   name                          varchar(255),
+  last_name                     varchar(255),
+  age                           integer,
   constraint pk_user primary key (id)
 );
 create sequence user_seq;

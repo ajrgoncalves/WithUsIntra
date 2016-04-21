@@ -2,6 +2,7 @@
 
  
 @main("Welcome to Play") {
+	
 
 <script type="text/javascript" src="@routes.Assets.versioned("js/index.js")"></script>
 
@@ -16,7 +17,8 @@
 
   <form action="@routes.HomeController.addUser()" method="post">  
   <input type="text" name="name"/>  
-  <button> Add User </button>
+  <input type="text" name="lastName"/>
+  <button class="btn btn-danger"> Add User </button>
   
   </form>
   

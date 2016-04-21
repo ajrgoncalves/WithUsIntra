@@ -1,5 +1,6 @@
 $ ->
   $.get "/users", (users) ->
     $.each users, (index, user) ->
-      $('#users').append $("<li>").text user.name 
+      $('#users').append ("<li>" + user.id + " " + user.name + " " + user.lastName + "</li>") 
+       
     

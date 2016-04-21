@@ -14,7 +14,9 @@ public class User extends Model{
 	@Id	
 	public Integer id;	
 	
-    public String name;   
+    public String name; 
+    public String lastName;
+    public int age;
 
     
     public User(){}
@@ -24,6 +26,10 @@ public class User extends Model{
     	this.name = name;
     }
     
+    public User(String name, String lastName){
+    	this.name = name;
+    	this.lastName = lastName;
+    }
     
     	
     

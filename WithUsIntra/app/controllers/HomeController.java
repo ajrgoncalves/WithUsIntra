@@ -38,12 +38,11 @@ public class HomeController extends Controller {
     	
     	Form<User> userForm = formFactory.form(User.class);    	
     	User user = userForm.bindFromRequest().get();
-    	
-    	
+    	    	
     	user.save();
     	
-    	return ok("User: " + user.name ); //Debug
-    	//return redirect(routes.HomeController.index());
+    	//return ok("User: " + user.lastName ); //Debug
+    	return redirect(routes.HomeController.index());
     }
   
     public Result getUsers(){
