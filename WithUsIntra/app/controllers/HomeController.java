@@ -1,9 +1,5 @@
 package controllers;
 
-import static play.libs.Json.toJson;
-
-import java.util.List;
-
 import javax.inject.Inject;
 
 import play.data.Form;
@@ -12,8 +8,6 @@ import play.mvc.Controller;
 import play.mvc.Result;
 import views.html.index;
 import Models.User;
-
-import com.avaje.ebean.Model;
 
 /**
  * This controller contains an action to handle HTTP requests
@@ -40,13 +34,14 @@ public class HomeController extends Controller {
     	return redirect(routes.HomeController.register());
     }
   
-    public Result getUsers(){
-    	
-    	Model.Finder<Integer, User> finder = new Model.Finder<>(User.class);    	
-    	List<User> users = finder.all();
-    	
-    	return ok(toJson(users));
-    }
+//    public Result getUsers(){
+//    	
+//    	Model.Finder<Integer, User> finder = new Model.Finder<>(User.class);    	
+//    	List<User> users = finder.all();
+//    	
+//    	return ok(toJson(users));
+//    }
+    
     
     public Result register(){
     	   
@@ -55,6 +50,43 @@ public class HomeController extends Controller {
     	
     }
     
+    public Result login(){
+    	
+    	return ok(views.html.login.render(formFactory.form(Login.class)));    	
+    	//return ok(views.html.login.render(form(Login.class)));
+    }
+    
+    public Result authenticate() {
+		Form<Login> loginForm = Form.form(Login.class).bindFromRequest();
+		if(loginForm.hasErrors()){
+			return badRequest(views.html.login.render(loginForm));
+		}else{
+			session().clear();
+			session("email", loginForm.get().email);
+			return redirect(routes.HomeController.index());
+		}
+	}
+  
+    public Result getUsers(){
+		return TODO;
+	}
+	
+	public Result createUser(){
+		return TODO;
+	}
 
+	public static class Login {
+    
+    	public static String email;
+    	public static String password;
+    	
+    	public static String validate() {
+    		if(User.authenticate(email, password) == null) {
+    			return "Login Failed";
+    		}
+    		return null;
+    	}
+    }
+    
 
 }

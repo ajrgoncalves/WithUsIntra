@@ -13,9 +13,18 @@ GET     /message                    controllers.AsyncController.message
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
 
 
-GET 	/users						controllers.HomeController.getUsers 
+#//GET 	/users						controllers.HomeController.getUsers 
 
 POST 	/addUser					controllers.HomeController.addUser
 
 
 GET 	/register					controllers.HomeController.register
+
+#Login
+GET		/login						controllers.HomeController.login
+POST    /login                      controllers.HomeController.authenticate
+
+
+#Admin
+GET		/users						controllers.HomeController.getUsers
+POST	/users						controllers.HomeController.createUser
